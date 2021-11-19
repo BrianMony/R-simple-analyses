@@ -2,7 +2,7 @@
 -I’m interested in Statistical Programming and Big Data Analytics
 -I’m currently learning R-Programming and Python
 -I’m looking to collaborate on Statistical Programming projects
-- 📫 How to reach me ...
+- 📫 How to reach me ...monybrianochieng@gmail.com
 
 <!---
 BrianMony/BrianMony is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
