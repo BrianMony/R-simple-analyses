@@ -1,14 +1,36 @@
-InsectSprays
+attach (InsectSprays)
 
-with(InsectSprays, as.factor(spray))
+#Viewing the data set so as to know how best to proceed
+
+head(InsectSprays)
+
+#Inspecting the data to check its cleanliness and analyzability
+
+str(InsectSprays)
+
+#Obtaining the dataset's visual descriptives
 
 par(mfcol=c(1,3))
 
 library(lattice)
 
-with(InsectSprays, densityplot(count))
+library(tidyverse)
 
-with(InsectSprays, hist(count, breaks=10, lwd=2,col=rainbow(10), main=("Histogram of Count Against Spray")))
+library(ggplot2)
+
+
+densityplot <- InsectSprays %>% ggplot(aes(x=count)) +
+  geom_density(fill='blue', alpha=0.5) +
+  labs(title='A Densityplot Showing the Distribution of Sprays', x='Spray Count')
+
+densityplot
+
+hist <- InsectSprays %>% ggplot(aes(x= count)) +
+  geom_histogram(aes(y=..density..), fill = 'blue', alpha=0.5, col='black',bins = 10) +
+  labs(title = 'A Histogram Ascertaining the Distribution Sprays', x='Spray Count') + 
+  geom_density(lwd=1.5, col='red')
+
+hist
 
 boxplot(count~spray, col=rainbow(7),data=InsectSprays, main="Boxplot of Insect Count by Spraytype")
 
