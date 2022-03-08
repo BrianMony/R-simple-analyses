@@ -19,7 +19,11 @@ library(tidyverse)
 library(ggplot2)
 
 
-with(InsectSprays, densityplot(count))
+densityplot <- InsectSprays %>% ggplot(aes(x=count)) +
+  geom_density(fill='blue', alpha=0.5) +
+  labs(title='A Densityplot Showing the Distribution of Sprays', x='Spray Count')
+
+densityplot
 
 with(InsectSprays, hist(count, breaks=10, lwd=2,col=rainbow(10), main=("Histogram of Count Against Spray")))
 
