@@ -1,10 +1,23 @@
-InsectSprays
+attach (InsectSprays)
 
-with(InsectSprays, as.factor(spray))
+#Viewing the data set so as to know how best to proceed
+
+head(InsectSprays)
+
+#Inspecting the data to check its cleanliness and analyzability
+
+str(InsectSprays)
+
+#Obtaining the dataset's visual descriptives
 
 par(mfcol=c(1,3))
 
 library(lattice)
+
+library(tidyverse)
+
+library(ggplot2)
+
 
 with(InsectSprays, densityplot(count))
 
