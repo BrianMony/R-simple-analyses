@@ -25,7 +25,12 @@ densityplot <- InsectSprays %>% ggplot(aes(x=count)) +
 
 densityplot
 
-with(InsectSprays, hist(count, breaks=10, lwd=2,col=rainbow(10), main=("Histogram of Count Against Spray")))
+hist <- InsectSprays %>% ggplot(aes(x= count)) +
+  geom_histogram(aes(y=..density..), fill = 'blue', alpha=0.5, col='black',bins = 10) +
+  labs(title = 'A Histogram Ascertaining the Distribution Sprays', x='Spray Count') + 
+  geom_density(lwd=1.5, col='red')
+
+hist
 
 boxplot(count~spray, col=rainbow(7),data=InsectSprays, main="Boxplot of Insect Count by Spraytype")
 
