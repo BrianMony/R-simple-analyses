@@ -32,7 +32,11 @@ hist <- InsectSprays %>% ggplot(aes(x= count)) +
 
 hist
 
-boxplot(count~spray, col=rainbow(7),data=InsectSprays, main="Boxplot of Insect Count by Spraytype")
+box <- InsectSprays %>% ggplot(aes(x=spray, y= count)) +
+  geom_boxplot(aes(fill= spray)) +
+  labs(title="Boxplot of Insect Count by Spraytype", subtitle = "Insectsprays Data", x= "Spray Type", y="Count")
+
+box
 
 summary(InsectSprays)
 
